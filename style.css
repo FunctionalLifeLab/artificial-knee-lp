@@ -144,3 +144,74 @@ ul,ol{list-style:none}
 /* spacing */
 .mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}.mt24{margin-top:24px}.mt28{margin-top:28px}.mt32{margin-top:32px}.mt36{margin-top:36px}.mt40{margin-top:40px}
 .mb0{margin-bottom:0}.mb8{margin-bottom:8px}.mb12{margin-bottom:12px}.mb16{margin-bottom:16px}.mb20{margin-bottom:20px}.mb24{margin-bottom:24px}.mb28{margin-bottom:28px}.mb32{margin-bottom:32px}.mb36{margin-bottom:36px}.mb40{margin-bottom:40px}.mb48{margin-bottom:48px}.mb52{margin-bottom:52px}
+
+/* ── Floating Bar ── */
+.float-bar{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:var(--max);
+  display:flex;
+  z-index:1000;
+  padding:10px 16px 14px;
+  gap:10px;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  box-shadow:0 -1px 0 rgba(0,0,0,0.06);
+}
+
+.float-btn{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:14px 8px;
+  border-radius:10px;
+  font-family:var(--sans);
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.02em;
+  transition:background .2s;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+}
+
+.float-line{
+  background:var(--green);
+  color:#fff;
+}
+
+.float-line:hover{
+  background:var(--green-hover);
+}
+
+.float-tel{
+  background:#fff;
+  color:var(--text);
+  border:.5px solid rgba(0,0,0,0.18);
+}
+
+.float-tel:hover{
+  background:rgba(0,0,0,0.03);
+}
+
+/* フローティングバー分の余白をbodyに追加 */
+body{
+  padding-bottom:80px;
+}
+
+/* ── Flow photos ── */
+.flow-content{flex:1}
+.flow-photo{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  display:block;
+  margin-top:16px;
+  object-fit:cover;
+}
