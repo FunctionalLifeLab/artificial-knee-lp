@@ -257,3 +257,28 @@ body{
   margin-bottom:8px;
 }
 .cta-edu-note p:last-child{margin-bottom:0}
+
+/* ── サブCTAブロック ── */
+.sub-cta-box{
+  margin-top:40px;
+  padding:28px 24px;
+  background:var(--sub);
+  border-radius:12px;
+}
+.sub-cta-label{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:500;
+  color:var(--text);
+  letter-spacing:.02em;
+  margin-bottom:16px;
+  display:block;
+}
+.sub-cta-body{
+  font-size:13px;
+  font-weight:300;
+  line-height:2;
+  color:var(--sub-text);
+  margin-bottom:8px;
+}
+.sub-cta-body:last-of-type{margin-bottom:0}
