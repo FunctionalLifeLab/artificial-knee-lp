@@ -241,3 +241,19 @@ body{
   flex-shrink: 0;
   margin-top: 1px;
 }
+
+/* ── CTA教育補足ブロック ── */
+.cta-edu-note{
+  background:var(--sub);
+  border-radius:10px;
+  padding:20px 24px;
+  margin-top:20px;
+}
+.cta-edu-note p{
+  font-size:13px;
+  font-weight:300;
+  line-height:2;
+  color:var(--sub-text);
+  margin-bottom:8px;
+}
+.cta-edu-note p:last-child{margin-bottom:0}
