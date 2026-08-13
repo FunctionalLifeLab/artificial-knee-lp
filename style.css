@@ -302,6 +302,10 @@ section {
   line-height: 1.6;
 }
 
+.nowrap { white-space: nowrap; }
+
+.heading-break-lg { display: none; }
+
 .section-heading.left { text-align: left; }
 
 /* ---------- Body copy blocks ---------- */
@@ -585,8 +589,15 @@ section {
 }
 .offer-list li:last-child { border-bottom: none; }
 
+.offer-strike {
+  color: var(--ink-soft);
+  font-size: 15px;
+  text-decoration: line-through;
+  margin: 0 0 8px;
+}
+
 .offer-price {
-  margin: 6px 0 4px;
+  margin: 0 0 22px;
 }
 .offer-price .value {
   font-family: var(--font-serif);
@@ -595,13 +606,6 @@ section {
   font-weight: 700;
 }
 .offer-price .tax { font-size: 15px; margin-left: 2px; }
-
-.offer-strike {
-  color: var(--ink-soft);
-  font-size: 15px;
-  text-decoration: line-through;
-  margin-bottom: 18px;
-}
 
 /* ---------- Checklist ---------- */
 
@@ -732,6 +736,7 @@ section {
   .section-tight { padding: 52px 0; }
 
   .section-heading h2 { font-size: 30px; }
+  .heading-break-lg { display: inline; }
   .quote-line.section-lead { font-size: 30px; }
 
   .rec-card { padding: 44px 56px; }
