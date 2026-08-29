@@ -173,11 +173,11 @@ ul,ol{list-style:none}
 /* 問いかけ：本文より一段強く、前後に余白 */
 .q{
   font-family:var(--serif);
-  font-size:17px;
+  font-size:19px;
   font-weight:500;
   line-height:1.75;
   color:var(--tx);
-  margin:36px 0 28px;
+  margin:52px 0 28px;
 }
 
 /* Reveal：さらに一段強い */
@@ -526,3 +526,20 @@ ul,ol{list-style:none}
 
 /* ── キーワード強調（膝） ── */
 .kw{color:var(--green);font-weight:700;font-size:1.15em;}
+
+/* ── 患者事例前：2階層注記 ── */
+.case-note-main{
+  font-size:16px;font-weight:500;
+  line-height:1.8;color:var(--tx);
+  margin-bottom:8px;
+}
+.case-note-sub{
+  font-size:13px;font-weight:300;
+  color:var(--txs);line-height:1.8;
+}
+.case-note-wrap{
+  padding:16px 18px;
+  background:var(--off);
+  border-radius:8px;
+  margin:24px 0;
+}
