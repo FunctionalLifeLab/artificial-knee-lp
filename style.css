@@ -569,3 +569,14 @@ ul,ol{list-style:none}
 
 /* ── キーワード強調（膝）── 再定義 */
 .kw{color:var(--green);font-weight:700;font-size:1.15em;}
+
+/* ── FVサブヘッド ── */
+.fv-sub{
+  font-family:var(--serif);
+  font-size:17px;
+  font-weight:500;
+  line-height:1.85;
+  color:var(--tx);
+  margin:20px 0 28px;
+  letter-spacing:.01em;
+}
