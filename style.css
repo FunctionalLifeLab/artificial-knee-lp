@@ -1,324 +1,344 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap');
 
 /* ── Reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
 body{
   font-family:'Noto Sans JP',sans-serif;
-  font-weight:300;
-  color:#2d2d2d;
-  background:#fff;
+  font-weight:300;color:#1e1e1e;background:#fff;
   -webkit-font-smoothing:antialiased;
-  padding-bottom:80px;
-  line-height:1;
+  padding-bottom:80px;line-height:1;
 }
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 ul,ol{list-style:none}
 
-/* ── Design Tokens ── */
+/* ── Tokens ── */
 :root{
-  /* Colors */
-  --green:     #3d6b53;
-  --green2:    #4f8068;
-  --lav:       #f0eef7;      /* 薄いラベンダー */
-  --lav2:      #e8e4f4;      /* 少し濃いラベンダー（アクセント） */
-  --white:     #ffffff;
-  --off:       #fafaf9;      /* オフホワイト */
-  --tx:        #1e1e1e;
-  --txm:       #4a4a4a;
-  --txs:       #767676;
-  --txl:       #a0a0a0;
-  --line-c:    rgba(0,0,0,.08);
-
-  /* Type */
-  --serif:     'Noto Serif JP', serif;
-  --sans:      'Noto Sans JP', sans-serif;
-
-  /* Layout */
-  --max:       560px;
-  --px:        22px;
-  --r:         10px;
-  --r-lg:      16px;
+  --green:    #3d6b53;
+  --green2:   #4f8068;
+  --green-bg: #eef4f0;
+  --lav:      #f0eef7;
+  --lav2:     #e8e4f4;
+  --white:    #ffffff;
+  --off:      #fafaf9;
+  --tx:       #1e1e1e;
+  --txm:      #4a4a4a;
+  --txs:      #767676;
+  --txl:      #a0a0a0;
+  --red:      #c0392b;
+  --line-c:   rgba(0,0,0,.08);
+  --serif:    'Noto Serif JP', serif;
+  --sans:     'Noto Sans JP', sans-serif;
+  --max:      560px;
+  --px:       22px;
+  --r:        10px;
+  --r-lg:     16px;
 }
 
 /* ── Layout ── */
 .lp{max-width:var(--max);margin:0 auto}
-
-/* ── Sections ── */
 .s-white{background:var(--white)}
+.s-green{background:var(--green-bg)}
 .s-lav{background:var(--lav)}
 .s-off{background:var(--off)}
 .sec{padding:56px var(--px)}
-.sec-sm{padding:40px var(--px)}
 
-/* ── Typography Scale ── */
-/* Level 0: pre-head label */
-.pre{
+/* ══════════════════════════════
+   FV
+══════════════════════════════ */
+.fv-wrap{
+  background:var(--green-bg);
+  padding:36px var(--px) 48px;
+}
+/* プリヘッド */
+.fv-prehead{
+  font-size:12px;font-weight:500;letter-spacing:.14em;
+  color:var(--green);display:block;margin-bottom:4px;
+}
+/* 対象者 */
+.fv-target{
+  font-family:var(--serif);font-size:16px;font-weight:600;
+  color:var(--txm);margin-bottom:24px;display:block;line-height:1.5;
+}
+/* 悩みリスト枠 */
+.fv-concerns{
+  background:#fff;border-radius:var(--r);
+  padding:18px 18px 14px;margin-bottom:28px;
+  border:1px solid rgba(61,107,83,.15);
+}
+.fv-concerns-title{
+  font-size:12px;font-weight:600;color:var(--green);
+  letter-spacing:.1em;display:block;margin-bottom:12px;
+}
+.fv-concerns ul{padding:0;}
+.fv-concerns li{
+  font-size:15px;font-weight:300;line-height:1.75;
+  color:var(--tx);padding:7px 0 7px 22px;
+  position:relative;border-bottom:1px solid var(--line-c);
+}
+.fv-concerns li:last-child{border-bottom:none}
+.fv-concerns li::before{
+  content:'✓';position:absolute;left:0;top:7px;
+  color:var(--green);font-weight:700;font-size:13px;
+}
+/* ──────────────────────────────
+   FV セクション背景
+────────────────────────────── */
+.s-fv{
+  background:var(--green-bg);
+  padding:40px var(--px) 48px;
+}
+
+/* HL：レベル3最強 */
+.fv-hl{
+  font-family:var(--serif);
+  font-size:38px;
+  font-weight:700;
+  line-height:1.42;
+  letter-spacing:.01em;
+  color:var(--tx);
+  margin:24px 0 20px;
+}
+/* 「膝痛の秘密」のみ赤強調 */
+.fv-hl-accent{
+  color:var(--red);
+}
+
+/* サブヘッド：レベル2 */
+.fv-sub{
+  font-family:var(--serif);
+  font-size:17px;
+  font-weight:500;
+  line-height:1.85;
+  color:var(--txm);
+  margin-bottom:28px;
+}
+
+/* Promise：レベル3（HLの次点・黒背景） */
+.fv-promise{
+  background:var(--tx);
+  color:#fff;
+  border-radius:var(--r);
+  padding:22px 20px;
+  margin-bottom:20px;
+}
+.fv-promise-main{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  line-height:1.65;
+  color:#fff;
+  display:block;
+  margin-bottom:10px;
+}
+.fv-promise-sub{
+  font-size:16px;
+  font-weight:500;
+  color:#ffffff;
+  line-height:1.9;
+}
+
+/* 価格枠：レベル3（HL・Promiseより一段控えめ） */
+.fv-price-box{
+  background:#fff;
+  border:2px solid var(--green);
+  border-radius:var(--r);
+  padding:16px 20px 14px;
+  margin-bottom:20px;
+  text-align:center;
+}
+.fv-price-lbl{
   font-size:12px;
-  font-weight:400;
+  font-weight:600;
   letter-spacing:.12em;
   color:var(--green);
-  text-transform:none;
-  margin-bottom:16px;
+  display:block;
+  margin-bottom:6px;
+}
+.fv-price-orig{
+  font-size:13px;
+  color:var(--txl);
+  text-decoration:line-through;
+  display:block;
+  margin-bottom:4px;
+}
+.fv-price-num{
+  font-family:var(--serif);
+  font-size:44px;
+  font-weight:700;
+  color:var(--tx);
+  line-height:1;
+  display:block;
+}
+.fv-price-num span{
+  font-size:17px;
+  font-weight:400;
+}
+.fv-limit{
+  font-size:13px;
+  color:var(--red);
+  font-weight:700;
+  margin-top:8px;
   display:block;
 }
 
-/* Level 1: Main Headline */
-.hl{
+/* FV補助 */
+.fv-mid{
   font-family:var(--serif);
-  font-size:26px;
-  font-weight:600;
-  line-height:1.68;
-  letter-spacing:.02em;
-  color:var(--tx);
-  margin-bottom:0;
-}
-
-/* Level 2: Section heading */
-.sh{
-  font-family:var(--serif);
-  font-size:26px;
-  font-weight:700;
-  line-height:1.65;
-  letter-spacing:.02em;
-  color:var(--tx);
-  margin-top:48px;
-  margin-bottom:20px;
-}
-
-/* Level 3: Sub-heading */
-.ssh{
-  font-family:var(--serif);
-  font-size:18px;
-  font-weight:600;
-  line-height:1.7;
-  letter-spacing:.02em;
-  color:var(--tx);
-  margin-bottom:16px;
-}
-
-/* Body */
-.body{
-  font-size:16px;
-  font-weight:300;
-  line-height:2.0;
-  color:var(--tx);
-}
-.body+.body{margin-top:20px}
-
-.bodys{
   font-size:15px;
-  font-weight:300;
-  line-height:2.0;
-  color:var(--txm);
-}
-
-/* ── Problem list（生活場面）── */
-.prob-list{margin:24px 0}
-.prob-list li{
-  font-size:16px;
-  font-weight:300;
-  line-height:1;
-  color:var(--tx);
-  padding:11px 0 11px 18px;
-  position:relative;
-  border-bottom:1px solid var(--line-c);
-}
-.prob-list li:first-child{border-top:1px solid var(--line-c)}
-.prob-list li::before{
-  content:'';
-  position:absolute;
-  left:0;top:50%;
-  width:6px;height:6px;
-  border-radius:50%;
-  background:var(--green);
-  opacity:.45;
-  transform:translateY(-50%);
-}
-
-/* Check list */
-.ck-list{margin:16px 0}
-.ck-list li{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:15px;font-weight:300;
-  line-height:1.8;color:var(--tx);
-  padding:8px 0;
-}
-.ck-list li::before{
-  content:'✓';
-  color:var(--green);
-  font-weight:500;
-  flex-shrink:0;
-  margin-top:1px;
-}
-
-/* Dot list */
-.dot-list li{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:15px;font-weight:300;
-  line-height:1.8;color:var(--txm);
-  padding:6px 0;
-}
-.dot-list li::before{
-  content:'';
-  width:5px;height:5px;
-  border-radius:50%;
-  background:var(--green);
-  opacity:.4;
-  flex-shrink:0;
-  margin-top:8px;
-}
-
-/* ── Question / Reveal ── */
-/* 問いかけ：本文より一段強く、前後に余白 */
-.q{
-  font-family:var(--serif);
-  font-size:19px;
-  font-weight:500;
-  line-height:1.75;
-  color:var(--tx);
-  margin:52px 0 28px;
-}
-
-/* Reveal：さらに一段強い */
-.reveal{
-  font-family:var(--serif);
-  font-size:20px;
-  font-weight:600;
-  line-height:1.6;
-  letter-spacing:.02em;
-  color:var(--tx);
-  margin:32px 0;
-  padding:24px 22px;
-  background:var(--lav);
-  border-radius:var(--r);
-  border-left:3px solid var(--green);
-}
-
-/* 患者の言葉（引用） */
-.voice-qt{
-  font-family:var(--serif);
-  font-size:23px;
-  font-weight:600;
+  font-weight:400;
   line-height:1.7;
-  color:var(--tx);
+  color:var(--txm);
+  margin-bottom:0;
+  letter-spacing:.03em;
+}
+
+/* ══════════════════════════════
+   Big Idea（黒背景ブロック）
+══════════════════════════════ */
+.big-idea{
+  background:var(--tx);padding:36px var(--px);text-align:center;
+}
+.big-idea-sub{
+  font-size:13px;font-weight:400;letter-spacing:.12em;
+  color:rgba(255,255,255,.55);display:block;margin-bottom:16px;
+}
+.big-idea-text{
+  font-family:var(--serif);font-size:22px;font-weight:700;
+  line-height:1.7;color:#fff;margin-bottom:14px;
+}
+.big-idea-accent{color:#ff8888;}
+.big-idea-note{
+  font-size:14px;font-weight:300;
+  color:rgba(255,255,255,.7);line-height:1.9;
+}
+
+/* ══════════════════════════════
+   Buttons
+══════════════════════════════ */
+.btn-line{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:22px 20px;border-radius:var(--r);
+  background:var(--green);color:#fff;
+  font-family:var(--sans);font-size:18px;font-weight:600;
+  letter-spacing:.03em;border:none;cursor:pointer;
+  text-decoration:none;transition:background .2s;margin-bottom:12px;
+}
+.btn-line:hover{background:var(--green2)}
+.btn-tel{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:16px 20px;border-radius:var(--r);
+  background:var(--white);color:var(--tx);
+  border:1px solid rgba(0,0,0,.2);
+  font-family:var(--sans);font-size:15px;font-weight:400;
+  cursor:pointer;text-decoration:none;transition:background .2s;
+}
+.btn-tel:hover{background:#f5f5f5}
+.cta-note{
+  font-size:13px;font-weight:300;color:var(--txs);
+  text-align:center;margin-top:8px;line-height:1.8;
+}
+
+/* ══════════════════════════════
+   Typography
+══════════════════════════════ */
+.pre{
+  font-size:12px;font-weight:400;letter-spacing:.12em;
+  color:var(--green);margin-bottom:16px;display:block;
+}
+.sh{
+  font-family:var(--serif);font-size:26px;font-weight:700;
+  line-height:1.65;letter-spacing:.02em;color:var(--tx);
+  margin-top:0;margin-bottom:20px;
+}
+.ssh{
+  font-family:var(--serif);font-size:18px;font-weight:600;
+  line-height:1.7;letter-spacing:.02em;color:var(--tx);margin-bottom:16px;
+}
+.body{font-size:16px;font-weight:300;line-height:2.0;color:var(--tx);}
+.body+.body{margin-top:20px}
+.bodys{font-size:15px;font-weight:300;line-height:2.0;color:var(--txm);}
+.lbl{
+  font-size:11px;font-weight:500;letter-spacing:.14em;
+  color:var(--green);display:block;margin-bottom:12px;opacity:.85;
+}
+
+/* ══════════════════════════════
+   Reveal / Quote
+══════════════════════════════ */
+.reveal{
+  font-family:var(--serif);font-size:20px;font-weight:700;
+  line-height:1.65;letter-spacing:.02em;color:var(--tx);
+  margin:32px 0;padding:24px 22px;
+  background:var(--green-bg);border-radius:var(--r);
+  border-left:4px solid var(--green);
+}
+.voice-qt{
+  font-family:var(--serif);font-size:22px;font-weight:700;
+  line-height:1.65;color:var(--tx);
   padding:22px 20px 22px 22px;
   border-left:4px solid var(--green);
-  background:var(--lav2);
+  background:var(--green-bg);
   border-radius:0 var(--r) var(--r) 0;
   margin:32px 0;
 }
-
-/* インライン引用（短い） */
 .qt{
-  font-family:var(--serif);
-  font-size:16px;
-  font-weight:500;
-  line-height:1.95;
-  color:var(--tx);
-  padding-left:16px;
-  border-left:3px solid var(--green);
-  margin:24px 0;
+  font-family:var(--serif);font-size:16px;font-weight:500;
+  line-height:1.95;color:var(--tx);
+  padding-left:16px;border-left:3px solid var(--green);margin:24px 0;
+}
+.q{
+  font-family:var(--serif);font-size:19px;font-weight:600;
+  line-height:1.75;color:var(--tx);margin:52px 0 28px;
 }
 
-/* ── Section label ── */
-.lbl{
-  font-size:11px;
-  font-weight:500;
-  letter-spacing:.14em;
-  color:var(--green);
-  display:block;
-  margin-bottom:12px;
-  opacity:.85;
+/* ══════════════════════════════
+   Patient cases
+══════════════════════════════ */
+.case-note-wrap{
+  padding:18px 20px;background:var(--green-bg);
+  border-radius:var(--r);margin:24px 0;
+  border-left:4px solid var(--green);
+}
+.case-note-main{
+  font-size:16px;font-weight:600;line-height:1.8;
+  color:var(--tx);margin-bottom:6px;
+}
+.case-note-sub{
+  font-size:13px;font-weight:300;color:var(--txs);line-height:1.8;
+}
+.vb{padding:36px 0;border-top:1px solid var(--line-c)}
+.vb:first-child{border-top:none}
+.vb-head{
+  font-family:var(--serif);font-size:22px;font-weight:700;
+  line-height:1.6;color:var(--green);margin-bottom:4px;
+}
+.vb-sub{
+  font-size:13px;font-weight:500;color:var(--green);
+  letter-spacing:.05em;display:block;margin-bottom:20px;
+}
+.vb-note{
+  font-size:12px;font-weight:300;color:var(--txl);
+  line-height:1.8;padding:12px 16px;
+  background:var(--off);border-radius:8px;margin-bottom:24px;
 }
 
-/* ── CTA Buttons ── */
-.btn-line{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;
-  padding:22px 20px;
-  border-radius:var(--r);
-  background:var(--green);
-  color:#fff;
-  font-family:var(--sans);
-  font-size:18px;
-  font-weight:600;
-  letter-spacing:.03em;
-  border:none;cursor:pointer;
-  text-decoration:none;
-  transition:background .2s;
-  margin-bottom:12px;
+/* ══════════════════════════════
+   Offer block（緑背景）
+══════════════════════════════ */
+.offer-block{
+  background:var(--green);padding:32px var(--px);
 }
-.btn-line:hover{background:var(--green2)}
-
-.btn-tel{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;
-  padding:16px 20px;
-  border-radius:var(--r);
-  background:var(--white);
-  color:var(--tx);
-  border:1px solid rgba(0,0,0,.18);
-  font-family:var(--sans);
-  font-size:15px;
-  font-weight:400;
-  letter-spacing:.02em;
-  cursor:pointer;
-  text-decoration:none;
-  transition:background .2s;
-}
-.btn-tel:hover{background:#f5f5f5}
-
-/* ── CTA Block ── */
-.cta-block{
-  padding:40px var(--px);
-  background:var(--lav);
-}
-.cta-note{
-  font-size:13px;
-  font-weight:300;
-  color:var(--txs);
-  text-align:center;
-  margin-top:12px;
-  line-height:1.8;
-}
-
-/* ── Hero price ── */
-.fv-price{
-  background:var(--lav);
-  border-radius:var(--r);
-  padding:20px 22px 18px;
-  margin:28px 0 24px;
-}
-.fv-price-lbl{
-  font-size:13px;font-weight:600;
-  letter-spacing:.1em;color:var(--green);
-  display:block;margin-bottom:10px;
-}
-.fv-price-main{
-  font-family:var(--serif);
-  font-size:44px;font-weight:700;
-  color:var(--tx);line-height:1;
-  display:block;margin-bottom:3px;
-}
-.fv-price-main span{font-size:18px;font-weight:400}
-
-/* ── Offer box ── */
-.offer-box{
-  background:var(--lav);
-  border-radius:var(--r-lg);
-  padding:28px 22px 24px;
-  margin-bottom:24px;
+.offer-block-inner{
+  background:#fff;border-radius:var(--r-lg);padding:24px 20px;
 }
 .offer-lbl{
-  font-size:11px;font-weight:500;
-  letter-spacing:.13em;color:var(--green);
-  opacity:.8;display:block;margin-bottom:10px;
+  font-size:13px;font-weight:600;letter-spacing:.1em;
+  color:var(--green);display:block;margin-bottom:10px;
 }
 .offer-title{
-  font-family:var(--serif);
-  font-size:15px;font-weight:500;
+  font-family:var(--serif);font-size:16px;font-weight:600;
   color:var(--tx);margin-bottom:14px;line-height:1.7;
 }
 .offer-orig{
@@ -326,135 +346,88 @@ ul,ol{list-style:none}
   text-decoration:line-through;display:block;margin-bottom:4px;
 }
 .offer-arrow{
-  font-size:16px;color:var(--green);
-  opacity:.5;display:block;margin:6px 0;
+  font-size:16px;color:var(--green);display:block;margin:6px 0;
 }
 .offer-price{
-  font-family:var(--serif);
-  font-size:44px;font-weight:700;
-  color:var(--tx);line-height:1;
-  display:block;margin-bottom:4px;
+  font-family:var(--serif);font-size:52px;font-weight:700;
+  color:var(--tx);line-height:1;display:block;margin-bottom:4px;
 }
-.offer-price span{font-size:17px;font-weight:400}
+.offer-price span{font-size:18px;font-weight:400}
 .offer-limit{
-  font-size:12px;font-weight:400;
-  color:var(--txs);margin-top:10px;line-height:1.8;
+  font-size:13px;font-weight:700;color:var(--red);
+  margin-top:12px;line-height:1.8;display:block;
+}
+.offer-note{
+  font-size:13px;font-weight:300;color:var(--txs);
+  line-height:1.9;margin-top:12px;
 }
 
-/* ── Profile ── */
+/* ══════════════════════════════
+   Profile / Recommendation
+══════════════════════════════ */
 .pp{
-  width:96px;height:96px;
-  border-radius:50%;
-  object-fit:cover;object-position:center top;
-  margin:0 0 20px;
+  width:144px;height:144px;border-radius:50%;
+  object-fit:cover;object-position:center top;margin:0 0 20px;
 }
 .pname{
-  font-family:var(--serif);
-  font-size:20px;font-weight:600;
-  letter-spacing:.03em;margin-bottom:4px;
+  font-family:var(--serif);font-size:24px;font-weight:700;
+  letter-spacing:.03em;margin-bottom:6px;
 }
-.prole{font-size:12px;color:var(--txs);letter-spacing:.06em;display:block;margin-bottom:2px}
-.prolel{font-size:12px;color:var(--txs);letter-spacing:.06em;display:block;margin-bottom:28px}
-
-/* ── Recommendation ── */
+.prole{font-size:14px;color:var(--txs);letter-spacing:.06em;display:block;margin-bottom:3px}
+.prolel{font-size:14px;color:var(--txs);letter-spacing:.06em;display:block;margin-bottom:28px}
 .ri{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}
-.rp{
-  width:64px;height:64px;
-  border-radius:50%;
-  object-fit:cover;object-position:center top;
-  flex-shrink:0;
-}
-.rn{font-family:var(--serif);font-size:15px;font-weight:500;color:var(--tx);display:block;margin-bottom:3px}
+.rp{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;}
+.rn{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--tx);display:block;margin-bottom:3px}
 .rr{font-size:12px;color:var(--txs);letter-spacing:.05em;display:block}
 
-/* ── Flow steps ── */
+/* ══════════════════════════════
+   Flow steps
+══════════════════════════════ */
 .fi{padding:28px 0;border-top:1px solid var(--line-c)}
 .fi:first-child{border-top:none}
 .fnum{
-  font-size:11px;font-weight:500;
-  letter-spacing:.12em;color:var(--green);
-  opacity:.7;display:block;margin-bottom:10px;
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--green);display:block;margin-bottom:10px;
 }
 .fimg{width:100%;border-radius:var(--r);margin-top:16px}
 
-/* ── Location box ── */
-.loc-box{
-  background:var(--lav);border-radius:var(--r);
-  padding:18px 20px;margin-bottom:12px;
-}
-.loc-box p{font-size:14px;font-weight:300;line-height:2;color:var(--tx)}
-.loc-box strong{font-weight:500;color:var(--green)}
-
-/* ── Info anchor（重要な問いかけ） ── */
-.info-q{
-  font-family:var(--serif);
-  font-size:18px;font-weight:600;
-  line-height:1.72;color:var(--tx);
-  margin:40px 0 28px;
-}
-
-/* ── Voice block（患者事例） ── */
-.vb{padding:36px 0;border-top:1px solid var(--line-c)}
-.vb:first-child{border-top:none}
-.vb-head{
-  font-family:var(--serif);
-  font-size:20px;font-weight:700;
-  line-height:1.6;color:var(--tx);
-  margin-bottom:4px;
-}
-.vb-sub{
-  font-size:13px;font-weight:500;
-  color:var(--green);
-  letter-spacing:.04em;
-  display:block;
-  margin-bottom:20px;
-}
-.vb-note{
-  font-size:12px;font-weight:300;
-  color:var(--txl);line-height:1.8;
-  padding:12px 16px;
-  background:var(--off);
-  border-radius:8px;
-  margin-bottom:24px;
-}
-
-/* ── Inline image ── */
+/* ══════════════════════════════
+   Inline img / Lists
+══════════════════════════════ */
 .inline-img{
-  width:100%;max-width:480px;
-  height:auto;border-radius:var(--r);
-  display:block;margin:20px auto;
+  width:100%;max-width:480px;height:auto;
+  border-radius:var(--r);display:block;margin:20px auto;
+}
+.ck-list{margin:16px 0}
+.ck-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:15px;font-weight:300;line-height:1.8;color:var(--tx);padding:8px 0;
+}
+.ck-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px;}
+.dot-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:15px;font-weight:300;line-height:1.8;color:var(--txm);padding:6px 0;
+}
+.dot-list li::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--green);opacity:.5;flex-shrink:0;margin-top:8px;
 }
 
-/* ── Final anchor ── */
-.final-anchor{
-  font-family:var(--serif);
-  font-size:19px;font-weight:600;
-  line-height:1.7;color:var(--tx);
-  text-align:center;margin:32px 0 8px;
-}
-
-/* ── Float bar ── */
+/* ══════════════════════════════
+   Float bar
+══════════════════════════════ */
 .fbar{
-  position:fixed;bottom:0;
-  left:50%;transform:translateX(-50%);
+  position:fixed;bottom:0;left:50%;transform:translateX(-50%);
   width:100%;max-width:var(--max);
-  display:flex;gap:10px;
-  padding:10px 16px 14px;
-  background:rgba(255,255,255,.97);
-  backdrop-filter:blur(8px);
-  box-shadow:0 -1px 0 rgba(0,0,0,.08);
-  z-index:1000;
+  display:flex;gap:10px;padding:10px 16px 14px;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(8px);
+  box-shadow:0 -1px 0 rgba(0,0,0,.08);z-index:1000;
 }
 .fbtn{
-  flex:1;
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  padding:13px 8px;
-  border-radius:8px;
-  font-family:var(--sans);
-  font-size:14px;font-weight:500;
-  letter-spacing:.02em;
-  text-decoration:none;
-  border:none;cursor:pointer;
+  flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
+  padding:13px 8px;border-radius:8px;
+  font-family:var(--sans);font-size:14px;font-weight:500;
+  letter-spacing:.02em;text-decoration:none;border:none;cursor:pointer;
   transition:background .2s;
 }
 .fbl{background:var(--green);color:#fff}
@@ -462,121 +435,27 @@ ul,ol{list-style:none}
 .fbt{background:var(--white);color:var(--tx);border:1px solid rgba(0,0,0,.18)}
 .fbt:hover{background:#f5f5f5}
 
-/* ── Footer ── */
-.ft{
-  padding:32px var(--px) 20px;
-  background:var(--lav);
-  text-align:center;
-}
-.fb{
-  font-family:var(--serif);
-  font-size:14px;font-weight:500;
-  color:var(--tx);letter-spacing:.04em;
-  display:block;margin-bottom:5px;
-}
+/* ══════════════════════════════
+   Footer
+══════════════════════════════ */
+.ft{padding:32px var(--px) 20px;background:var(--lav);text-align:center;}
+.fb{font-family:var(--serif);font-size:14px;font-weight:500;color:var(--tx);letter-spacing:.04em;display:block;margin-bottom:5px}
 .ftag{font-size:12px;font-weight:300;color:var(--txs);line-height:2;margin-bottom:18px}
 .flink{font-size:12px;font-weight:300;color:var(--txs);border-bottom:.5px solid rgba(0,0,0,.15);padding-bottom:2px}
 
-/* ── PC ── */
+/* ══════════════════════════════
+   FV mid（補助用）
+══════════════════════════════ */
+.fv-mid{
+  font-family:var(--serif);font-size:15px;font-weight:400;
+  line-height:1.7;color:var(--txs);margin-bottom:16px;letter-spacing:.03em;
+}
+
+/* ══════════════════════════════
+   PC
+══════════════════════════════ */
 @media(min-width:580px){
   :root{--px:36px}
-  .hl{font-size:30px}
+  .fv-hl{font-size:40px}
   .sec{padding:64px var(--px)}
-}
-
-/* ── FV 情報階層調整 ── */
-/* ②「膝の痛みに悩むあなたへ」：中程度 */
-.fv-mid{
-  font-family:var(--serif);
-  font-size:15px;
-  font-weight:400;
-  line-height:1.7;
-  color:var(--txs);
-  margin-bottom:16px;
-  letter-spacing:.06em;
-}
-
-/* ③生活場面：1動作ずつ独立して認識させる */
-.fv-scenes{
-  margin:24px 0 28px;
-  padding-left:0;
-}
-.fv-scenes p{
-  font-family:var(--serif);
-  font-size:20px;
-  font-weight:500;
-  line-height:1;
-  color:var(--tx);
-  padding:12px 0;
-  letter-spacing:.04em;
-  border-bottom:1px solid rgba(0,0,0,.07);
-}
-.fv-scenes p:first-child{
-  border-top:1px solid rgba(0,0,0,.07);
-}
-.fv-scenes p+p{
-  border-top:none;
-}
-
-/* ④FVメインメッセージ：最も強く */
-.fv-main-msg{
-  font-family:var(--serif);
-  font-size:36px;
-  font-weight:700;
-  line-height:1.5;
-  letter-spacing:.01em;
-  color:var(--tx);
-  margin:32px 0 28px;
-}
-
-/* FV人物写真 */
-.fv-photo{
-  width:100%;
-  aspect-ratio:4/3;
-  object-fit:cover;
-  object-position:center top;
-  border-radius:12px;
-  display:block;
-  margin:0 0 28px;
-}
-
-/* FV価格強化 */
-.fv-price-strong{
-  background:var(--lav2);
-  border-radius:var(--r);
-  padding:24px 22px 20px;
-  margin:28px 0 24px;
-  border-left:3px solid var(--green);
-}
-
-
-/* ── 患者事例前：2階層注記 ── */
-.case-note-main{
-  font-size:16px;font-weight:500;
-  line-height:1.8;color:var(--tx);
-  margin-bottom:8px;
-}
-.case-note-sub{
-  font-size:13px;font-weight:300;
-  color:var(--txs);line-height:1.8;
-}
-.case-note-wrap{
-  padding:16px 18px;
-  background:var(--off);
-  border-radius:8px;
-  margin:24px 0;
-}
-
-/* ── キーワード強調（膝）── 再定義 */
-.kw{color:var(--green);font-weight:700;font-size:1.15em;}
-
-/* ── FVサブヘッド ── */
-.fv-sub{
-  font-family:var(--serif);
-  font-size:17px;
-  font-weight:500;
-  line-height:1.85;
-  color:var(--tx);
-  margin:20px 0 28px;
-  letter-spacing:.01em;
 }
