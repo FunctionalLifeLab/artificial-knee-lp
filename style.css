@@ -93,10 +93,10 @@ ul,ol{list-style:none}
 /* HL：レベル3最強 */
 .fv-hl{
   font-family:var(--serif);
-  font-size:38px;
+  font-size:36px;
   font-weight:700;
-  line-height:1.42;
-  letter-spacing:.01em;
+  line-height:1.45;
+  letter-spacing:-.01em;
   color:var(--tx);
   margin:24px 0 20px;
 }
@@ -256,9 +256,9 @@ ul,ol{list-style:none}
   font-family:var(--serif);font-size:18px;font-weight:600;
   line-height:1.7;letter-spacing:.02em;color:var(--tx);margin-bottom:16px;
 }
-.body{font-size:16px;font-weight:300;line-height:2.0;color:var(--tx);}
+.body{font-size:16px;font-weight:300;line-height:2.0;color:var(--tx);letter-spacing:-.01em;}
 .body+.body{margin-top:20px}
-.bodys{font-size:15px;font-weight:300;line-height:2.0;color:var(--txm);}
+.bodys{font-size:15px;font-weight:300;line-height:2.0;color:var(--txm);letter-spacing:-.01em;}
 .lbl{
   font-size:11px;font-weight:500;letter-spacing:.14em;
   color:var(--green);display:block;margin-bottom:12px;opacity:.85;
@@ -269,14 +269,14 @@ ul,ol{list-style:none}
 ══════════════════════════════ */
 .reveal{
   font-family:var(--serif);font-size:20px;font-weight:700;
-  line-height:1.65;letter-spacing:.02em;color:var(--tx);
+  line-height:1.65;letter-spacing:0;color:var(--tx);
   margin:32px 0;padding:24px 22px;
   background:var(--green-bg);border-radius:var(--r);
   border-left:4px solid var(--green);
 }
 .voice-qt{
   font-family:var(--serif);font-size:22px;font-weight:700;
-  line-height:1.65;color:var(--tx);
+  line-height:1.65;color:var(--tx);letter-spacing:-.01em;
   padding:22px 20px 22px 22px;
   border-left:4px solid var(--green);
   background:var(--green-bg);
@@ -285,12 +285,12 @@ ul,ol{list-style:none}
 }
 .qt{
   font-family:var(--serif);font-size:16px;font-weight:500;
-  line-height:1.95;color:var(--tx);
+  line-height:1.95;color:var(--tx);letter-spacing:-.01em;
   padding-left:16px;border-left:3px solid var(--green);margin:24px 0;
 }
 .q{
   font-family:var(--serif);font-size:19px;font-weight:600;
-  line-height:1.75;color:var(--tx);margin:52px 0 28px;
+  line-height:1.75;color:var(--tx);margin:52px 0 28px;letter-spacing:-.01em;
 }
 
 /* ══════════════════════════════
