@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap');
+
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  font-weight:300;color:#1e1e1e;background:#fff;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:80px;line-height:1;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+
+/* ── Tokens ── */
+:root{
+  --green:    #3d6b53;
+  --green2:   #4f8068;
+  --green-bg: #eef4f0;
+  --lav:      #f0eef7;
+  --lav2:     #e8e4f4;
+  --white:    #ffffff;
+  --off:      #fafaf9;
+  --tx:       #1e1e1e;
+  --txm:      #4a4a4a;
+  --txs:      #767676;
+  --txl:      #a0a0a0;
+  --red:      #c0392b;
+  --line-c:   rgba(0,0,0,.08);
+  --serif:    'Noto Serif JP', serif;
+  --sans:     'Noto Sans JP', sans-serif;
+  --max:      560px;
+  --px:       22px;
+  --r:        10px;
+  --r-lg:     16px;
+}
+
+/* ── Layout ── */
+.lp{max-width:var(--max);margin:0 auto}
+.s-white{background:var(--white)}
+.s-green{background:var(--green-bg)}
+.s-lav{background:var(--lav)}
+.s-off{background:var(--off)}
+.sec{padding:56px var(--px)}
+
+/* ══════════════════════════════
+   FV
+══════════════════════════════ */
+.fv-wrap{
+  background:var(--green-bg);
+  padding:36px var(--px) 48px;
+}
+/* プリヘッド */
+.fv-prehead{
+  font-size:12px;font-weight:500;letter-spacing:.14em;
+  color:var(--green);display:block;margin-bottom:4px;
+}
+/* 対象者 */
+.fv-target{
+  font-family:var(--serif);font-size:16px;font-weight:600;
+  color:var(--txm);margin-bottom:24px;display:block;line-height:1.5;
+}
+/* 悩みリスト枠 */
+.fv-concerns{
+  background:#fff;border-radius:var(--r);
+  padding:18px 18px 14px;margin-bottom:28px;
+  border:1px solid rgba(61,107,83,.15);
+}
+.fv-concerns-title{
+  font-size:12px;font-weight:600;color:var(--green);
+  letter-spacing:.1em;display:block;margin-bottom:12px;
+}
+.fv-concerns ul{padding:0;}
+.fv-concerns li{
+  font-size:15px;font-weight:300;line-height:1.75;
+  color:var(--tx);padding:7px 0 7px 22px;
+  position:relative;border-bottom:1px solid var(--line-c);
+}
+.fv-concerns li:last-child{border-bottom:none}
+.fv-concerns li::before{
+  content:'✓';position:absolute;left:0;top:7px;
+  color:var(--green);font-weight:700;font-size:13px;
+}
+/* ──────────────────────────────
+   FV セクション背景
+────────────────────────────── */
+.s-fv{
+  background:var(--green-bg);
+  padding:28px var(--px) 32px;
+  border-bottom:1px solid rgba(61,107,83,.12);
+}
+
+/* HL：書体・色・太さは維持、余白を詰める */
+.fv-hl{
+  font-family:var(--serif);
+  font-size:36px;
+  font-weight:700;
+  line-height:1.45;
+  letter-spacing:-.01em;
+  color:var(--tx);
+  margin:16px 0 16px;
+}
+/* 「膝痛の秘密」のみ赤強調：維持 */
+.fv-hl-accent{
+  color:var(--red);
+}
+
+/* サブヘッド */
+.fv-sub{
+  font-family:var(--serif);
+  font-size:17px;
+  font-weight:500;
+  line-height:1.85;
+  color:var(--txm);
+  margin-bottom:20px;
+}
+
+/* Promise：黒背景ボックスをやめ、リード文スタイルに */
+.fv-promise{
+  border-left:3px solid var(--green);
+  padding:12px 0 12px 16px;
+  margin-top:20px;
+  margin-bottom:0;
+  background:transparent;
+  border-radius:0;
+  color:inherit;
+}
+.fv-promise-main{
+  font-family:var(--serif);
+  font-size:17px;
+  font-weight:600;
+  line-height:1.7;
+  color:var(--tx);
+  display:block;
+  margin-bottom:6px;
+}
+.fv-promise-sub{
+  font-size:15px;
+  font-weight:400;
+  color:var(--txm);
+  line-height:1.8;
+}
+
+/* 価格枠：レベル3（HL・Promiseより一段控えめ） */
+.fv-price-box{
+  background:#fff;
+  border:2px solid var(--green);
+  border-radius:var(--r);
+  padding:16px 20px 14px;
+  margin-bottom:20px;
+  text-align:center;
+}
+.fv-price-lbl{
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.12em;
+  color:var(--green);
+  display:block;
+  margin-bottom:6px;
+}
+.fv-price-orig{
+  font-size:13px;
+  color:var(--txl);
+  text-decoration:line-through;
+  display:block;
+  margin-bottom:4px;
+}
+.fv-price-num{
+  font-family:var(--serif);
+  font-size:44px;
+  font-weight:700;
+  color:var(--tx);
+  line-height:1;
+  display:block;
+}
+.fv-price-num span{
+  font-size:17px;
+  font-weight:400;
+}
+.fv-limit{
+  font-size:13px;
+  color:var(--red);
+  font-weight:700;
+  margin-top:8px;
+  display:block;
+}
+
+/* FV補助 */
+.fv-mid{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:400;
+  line-height:1.7;
+  color:var(--txm);
+  margin-bottom:0;
+  letter-spacing:.03em;
+}
+
+/* ══════════════════════════════
+   Big Idea（黒背景ブロック）
+══════════════════════════════ */
+.big-idea{
+  background:var(--tx);padding:36px var(--px);text-align:center;
+}
+.big-idea-sub{
+  font-size:13px;font-weight:400;letter-spacing:.12em;
+  color:rgba(255,255,255,.55);display:block;margin-bottom:16px;
+}
+.big-idea-text{
+  font-family:var(--serif);font-size:22px;font-weight:700;
+  line-height:1.7;color:#fff;margin-bottom:14px;
+}
+.big-idea-accent{color:#ff8888;}
+.big-idea-note{
+  font-size:14px;font-weight:300;
+  color:rgba(255,255,255,.7);line-height:1.9;
+}
+
+/* ══════════════════════════════
+   Buttons
+══════════════════════════════ */
+.btn-line{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:22px 20px;border-radius:var(--r);
+  background:var(--green);color:#fff;
+  font-family:var(--sans);font-size:18px;font-weight:600;
+  letter-spacing:.03em;border:none;cursor:pointer;
+  text-decoration:none;transition:background .2s;margin-bottom:12px;
+}
+.btn-line:hover{background:var(--green2)}
+.btn-tel{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:16px 20px;border-radius:var(--r);
+  background:var(--white);color:var(--tx);
+  border:1px solid rgba(0,0,0,.2);
+  font-family:var(--sans);font-size:15px;font-weight:400;
+  cursor:pointer;text-decoration:none;transition:background .2s;
+}
+.btn-tel:hover{background:#f5f5f5}
+.cta-note{
+  font-size:13px;font-weight:300;color:var(--txs);
+  text-align:center;margin-top:8px;line-height:1.8;
+}
+
+/* ══════════════════════════════
+   Typography
+══════════════════════════════ */
+.pre{
+  font-size:12px;font-weight:400;letter-spacing:.12em;
+  color:var(--green);margin-bottom:16px;display:block;
+}
+.sh{
+  font-family:var(--serif);font-size:26px;font-weight:700;
+  line-height:1.65;letter-spacing:.02em;color:var(--tx);
+  margin-top:0;margin-bottom:20px;
+}
+.ssh{
+  font-family:var(--serif);font-size:18px;font-weight:600;
+  line-height:1.7;letter-spacing:.02em;color:var(--tx);margin-bottom:16px;
+}
+.body{font-size:16px;font-weight:300;line-height:2.0;color:var(--tx);letter-spacing:-.01em;}
+.body+.body{margin-top:20px}
+.bodys{font-size:15px;font-weight:300;line-height:2.0;color:var(--txm);letter-spacing:-.01em;}
+.lbl{
+  font-size:11px;font-weight:500;letter-spacing:.14em;
+  color:var(--green);display:block;margin-bottom:12px;opacity:.85;
+}
+
+/* ══════════════════════════════
+   Reveal / Quote — 記事型スタイル
+══════════════════════════════ */
+/* 重要：上下細線＋太字 */
+.reveal{
+  font-family:var(--serif);font-size:19px;font-weight:700;
+  line-height:1.7;letter-spacing:-.01em;color:var(--tx);
+  margin:28px 0;padding:18px 0;
+  background:transparent;border-radius:0;
+  border-top:1px solid rgba(61,107,83,.3);
+  border-bottom:1px solid rgba(61,107,83,.3);
+  border-left:none;
+}
+/* 最重要（認識転換点）：背景＋左太ボーダー＋大きめ */
+.reveal-key{
+  font-family:var(--serif);font-size:20px;font-weight:700;
+  line-height:1.75;letter-spacing:-.01em;color:var(--tx);
+  margin:32px 0;padding:20px 18px 20px 20px;
+  background:#fdf9f0;
+  border-left:4px solid var(--green);
+  border-top:none;border-bottom:none;border-radius:0;
+}
+.voice-qt{
+  font-family:var(--serif);font-size:21px;font-weight:700;
+  line-height:1.65;color:var(--tx);letter-spacing:-.02em;
+  padding:4px 0 4px 18px;
+  border-left:3px solid var(--green);
+  background:transparent;
+  border-radius:0;
+  margin:28px 0;
+}
+.qt{
+  font-family:var(--serif);font-size:16px;font-weight:500;
+  line-height:1.95;color:var(--tx);letter-spacing:-.01em;
+  padding-left:16px;border-left:3px solid var(--green);margin:24px 0;
+}
+.q{
+  font-family:var(--serif);font-size:20px;font-weight:700;
+  line-height:1.75;color:var(--green);margin:40px 0 24px;letter-spacing:-.01em;
+}
+
+/* ══════════════════════════════
+   Patient cases
+══════════════════════════════ */
+.case-note-wrap{
+  padding:14px 0 14px 16px;background:transparent;
+  border-radius:0;margin:24px 0;
+  border-left:3px solid var(--green);
+}
+.case-note-main{
+  font-size:16px;font-weight:600;line-height:1.8;
+  color:var(--tx);margin-bottom:6px;
+}
+.case-note-sub{
+  font-size:13px;font-weight:300;color:var(--txs);line-height:1.8;
+}
+.vb{padding:36px 0;border-top:1px solid var(--line-c)}
+.vb:first-child{border-top:none}
+.vb-head{
+  font-family:var(--serif);font-size:22px;font-weight:700;
+  line-height:1.6;color:var(--green);margin-bottom:4px;
+}
+.vb-sub{
+  font-size:13px;font-weight:500;color:var(--green);
+  letter-spacing:.05em;display:block;margin-bottom:20px;
+}
+.vb-note{
+  font-size:12px;font-weight:300;color:var(--txl);
+  line-height:1.8;padding:12px 16px;
+  background:var(--off);border-radius:8px;margin-bottom:24px;
+}
+
+/* ══════════════════════════════
+   Offer block（緑背景）
+══════════════════════════════ */
+.offer-block{
+  background:var(--green);padding:32px var(--px);
+}
+.offer-block-inner{
+  background:#fff;border-radius:var(--r-lg);padding:24px 20px;
+}
+.offer-lbl{
+  font-size:13px;font-weight:600;letter-spacing:.1em;
+  color:var(--green);display:block;margin-bottom:10px;
+}
+.offer-title{
+  font-family:var(--serif);font-size:16px;font-weight:600;
+  color:var(--tx);margin-bottom:14px;line-height:1.7;
+}
+.offer-orig{
+  font-size:13px;color:var(--txl);
+  text-decoration:line-through;display:block;margin-bottom:4px;
+}
+.offer-arrow{
+  font-size:16px;color:var(--green);display:block;margin:6px 0;
+}
+.offer-price{
+  font-family:var(--serif);font-size:52px;font-weight:700;
+  color:var(--tx);line-height:1;display:block;margin-bottom:4px;
+}
+.offer-price span{font-size:18px;font-weight:400}
+.offer-limit{
+  font-size:13px;font-weight:700;color:var(--red);
+  margin-top:12px;line-height:1.8;display:block;
+}
+.offer-note{
+  font-size:13px;font-weight:300;color:var(--txs);
+  line-height:1.9;margin-top:12px;
+}
+
+/* ══════════════════════════════
+   Profile / Recommendation
+══════════════════════════════ */
+.pp{
+  width:144px;height:144px;border-radius:50%;
+  object-fit:cover;object-position:center top;margin:0 0 20px;
+}
+.pname{
+  font-family:var(--serif);font-size:24px;font-weight:700;
+  letter-spacing:.03em;margin-bottom:6px;
+}
+.prole{font-size:14px;color:var(--txs);letter-spacing:.06em;display:block;margin-bottom:3px}
+.prolel{font-size:14px;color:var(--txs);letter-spacing:.06em;display:block;margin-bottom:28px}
+.ri{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}
+.rp{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;}
+.rn{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--tx);display:block;margin-bottom:3px}
+.rr{font-size:12px;color:var(--txs);letter-spacing:.05em;display:block}
+
+/* ══════════════════════════════
+   Flow steps
+══════════════════════════════ */
+.fi{padding:28px 0;border-top:1px solid var(--line-c)}
+.fi:first-child{border-top:none}
+.fnum{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--green);display:block;margin-bottom:10px;
+}
+.fimg{width:100%;border-radius:var(--r);margin-top:16px}
+
+/* ══════════════════════════════
+   Inline img / Lists
+══════════════════════════════ */
+.inline-img{
+  width:100%;max-width:480px;height:auto;
+  border-radius:var(--r);display:block;margin:20px auto;
+}
+.ck-list{margin:16px 0}
+.ck-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:15px;font-weight:300;line-height:1.8;color:var(--tx);padding:8px 0;
+}
+.ck-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px;}
+.dot-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:15px;font-weight:300;line-height:1.8;color:var(--txm);padding:6px 0;
+}
+.dot-list li::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--green);opacity:.5;flex-shrink:0;margin-top:8px;
+}
+
+/* ══════════════════════════════
+   Float bar
+══════════════════════════════ */
+.fbar{
+  position:fixed;bottom:0;left:50%;transform:translateX(-50%);
+  width:100%;max-width:var(--max);
+  display:flex;gap:10px;padding:10px 16px 14px;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(8px);
+  box-shadow:0 -1px 0 rgba(0,0,0,.08);z-index:1000;
+}
+.fbtn{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
+  padding:13px 8px;border-radius:8px;
+  font-family:var(--sans);font-size:14px;font-weight:500;
+  letter-spacing:.02em;text-decoration:none;border:none;cursor:pointer;
+  transition:background .2s;
+}
+.fbl{background:var(--green);color:#fff}
+.fbl:hover{background:var(--green2)}
+.fbt{background:var(--white);color:var(--tx);border:1px solid rgba(0,0,0,.18)}
+.fbt:hover{background:#f5f5f5}
+
+/* ══════════════════════════════
+   Footer
+══════════════════════════════ */
+.ft{padding:32px var(--px) 20px;background:var(--lav);text-align:center;}
+.fb{font-family:var(--serif);font-size:14px;font-weight:500;color:var(--tx);letter-spacing:.04em;display:block;margin-bottom:5px}
+.ftag{font-size:12px;font-weight:300;color:var(--txs);line-height:2;margin-bottom:18px}
+.flink{font-size:12px;font-weight:300;color:var(--txs);border-bottom:.5px solid rgba(0,0,0,.15);padding-bottom:2px}
+
+/* ══════════════════════════════
+   FV mid（補助用）
+══════════════════════════════ */
+.fv-mid{
+  font-family:var(--serif);font-size:15px;font-weight:400;
+  line-height:1.7;color:var(--txs);margin-bottom:16px;letter-spacing:.03em;
+}
+
+/* ══════════════════════════════
+   PC
+══════════════════════════════ */
+@media(min-width:580px){
+  :root{--px:36px}
+  .fv-hl{font-size:40px}
+  .sec{padding:64px var(--px)}
+}
